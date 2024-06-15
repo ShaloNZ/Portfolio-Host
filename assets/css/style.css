@@ -1,0 +1,392 @@
+:root {
+    --color-1: #f4a100;
+    --color-2: #11998e;
+    --color-3: #38ef7d;
+    --color-5: #9b9b9b;
+    --color-6: #c18600;
+    --color-7: #e8a8295b;
+    --color-8: #596571c5;
+}
+
+
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("/assets/font/Metropolis-Regular.otf");
+}
+
+* {
+    font-family: "Metropolis";
+}
+
+
+
+/* Font Size */
+.font-size-32 {
+    font-size: 32px;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}
+
+.font-size-22 {
+    font-size: 22px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+
+
+/* Font-weight */
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+
+
+/* Text-color */
+.text-color-1 {
+    color: var(--color-1);
+}
+
+.text-color-2 {
+    color: var(--color-5);
+}
+
+
+
+/* Background-color */
+.background-color-8 {
+    background-color: var(--color-8) !important;
+}
+
+
+
+/* Hover */
+.text-hover-1:hover {
+    color: var(--color-6);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.div-hover-1:hover {
+    background-color: var(--color-7);
+    transition-duration: 1s;
+}
+
+
+
+/* Css OverWrite */
+.nav-link {
+    background-color: var(--color-1);
+    color: white;
+}
+
+.btn-warning {
+    background-color: var(--color-1);
+}
+
+
+
+/* Box Shadow */
+.box-shadow-1 {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.box-shadow-2 {
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+
+/* Link Text */
+.link-text-design-1 {
+    color: var(--color-1);
+    text-decoration: none;
+}
+
+
+
+/* Icon Css */
+.icon-color-1 {
+    color: var(--color-1);
+}
+
+
+
+/* Input-Filed Start*/
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--color-5);
+    outline: 0;
+    font-size: 18px;
+    padding-top: 20px;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form__label {
+        font-size: 16px;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 18px;
+    color: var(--color-5);
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 18px;
+        color: var(--color-1);
+        font-weight: 700;
+    }
+
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--color-1), var(--color-2));
+    border-image-slice: 1;
+}
+
+.form__field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+/* Input-Filed End*/
+
+
+/* Progress Bar Start */
+.container {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px 100px;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    width: 240px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: -1px;
+    width: 20px;
+    height: 100%;
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.box .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#dbdae1, #a3aaba);
+    color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        20px 20px 20px rgba(0, 0, 0, 0.1),
+        50px 50px 50px rgba(0, 0, 0, 0.1),
+        inset 3px 3px 2px #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .content .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.box .content .percent::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 20px;
+    background: #555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.box .content .percent svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+.box .content .percent svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 3;
+    stroke: rgba(0, 0, 0, 0.05);
+    transform: translate(5px, 5px);
+}
+
+.box .content .percent svg circle:nth-child(2) {
+    stroke: #ffffff;
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.box .content .percent .dot {
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    animation: animateDot 2s linear forwards;
+}
+
+@keyframes animateDot {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+
+.box .content .percent .dot::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: #555;
+    border-radius: 50%;
+}
+
+.box .content .number {
+    position: relative;
+    inset: 0;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+    text-align: center;
+}
+
+.box .content .number h2 {
+    font-size: 2.5rem;
+    color: #555;
+}
+
+.box .content .number h2 span {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+/* Progress Bar End */
+
+
+
+/* Scroll-Bar Css Start */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-1);
+    border-radius: 20px
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-7);
+}
+
+/* Scroll-Bar Css End */
+
+
+/* Portfolio Project Div Start */
+.Portfolio-project-div {
+    border-radius: 10px;
+    background-image: url("/assets/images/project-image/image_1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+
+/* Portfolio Project Div End */
